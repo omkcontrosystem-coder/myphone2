@@ -1,1 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="OMK Contro System Malaysia provides reliable electrical services, EV charger installation, UTP Cat-6 cabling, fibre optic connectivity and CCTV systems across Peninsular Malaysia." />
+  <meta name="theme-color" content="#0d2238" />
+  <title>OMK Contro System Malaysia | Electrical Services</title>
+  <link rel="canonical" href="https://omkcontrosystem-coder.github.io/myphone2/" />
+  <style>
+    :root {
+      --black: #101820;
+      --blue: #0a7ac2;
+      --yellow: #ffd21f;
+      --white: #ffffff;
+      --soft: #f4f7fa;
+      --text: #1b2a36;
+      --muted: #5e6d7d;
+      --green: #1dbf73;
+      --border: #dfe7ee;
+    }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(16, 24, 32, 0.98);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 82px;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--yellow), #f9c71b);
+      color: var(--black);
+      font-size: 1rem;
+      font-weight: 900;
+      border: 2px solid rgba(255,255,255,0.18);
+    }
+
+    .brand small {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.75);
+      margin-top: 2px;
+      font-weight: 700;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: white;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      font-weight: 700;
+      opacity: 0.9;
+    }
+
+    nav a:hover { color: var(--yellow); }
+
+    .cta-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 800;
+      transition: 0.2s ease;
+      border: 2px solid transparent;
+    }
+
+    .btn.primary {
+      background: var(--yellow);
+      color: var(--black);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      border-color: rgba(255,255,255,0.5);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      filter: brightness(0.98);
+    }
+
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(8, 18, 30, 0.82), rgba(8, 18, 30, 0.66)),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900"><rect width="100%" height="100%" fill="%230d2238"/><circle cx="1250" cy="180" r="260" fill="%23ffd21f" fill-opacity="0.18"/><circle cx="1100" cy="520" r="420" fill="%230a7ac2" fill-opacity="0.18"/></svg>') center/cover no-repeat;
+      color: white;
+      padding: 96px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.3rem, 4vw, 4.1rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-copy p {
+      max-width: 630px;
+      margin: 20px 0 28px;
+      font-size: 1.12rem;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(4px);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.16);
+    }
+
+    .stats {
+      display: grid;
+      gap: 16px;
+    }
+
+    .stat {
+      padding: 18px 18px 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: clamp(1.5rem, 2vw, 2rem);
+      color: var(--yellow);
+      margin-bottom: 4px;
+    }
+
+    .trust-bar {
+      background: var(--yellow);
+      color: var(--black);
+      font-weight: 800;
+      padding: 16px 0;
+    }
+
+    .trust-list {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 38px;
+    }
+
+    .section-head .eyebrow {
+      color: var(--blue);
+    }
+
+    h2 {
+      margin: 10px 0 14px;
+      font-size: clamp(2rem, 2.8vw, 2.8rem);
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .service-grid,
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 25px rgba(15, 25, 37, 0.06);
+    }
+
+    .card-visual {
+      height: 200px;
+      background: linear-gradient(135deg, #dfeaf5, #bfd8ec);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 2rem;
+      color: var(--blue);
+    }
+
+    .card-body {
+      padding: 22px 22px 18px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.28rem;
+      color: var(--black);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .about {
+      background: var(--soft);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+      min-height: 360px;
+      background: linear-gradient(135deg, #dfeaf5, #cfe0ed);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 18px 18px 0 var(--yellow);
+    }
+
+    .about-visual::before {
+      content: "OMK";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(3rem, 7vw, 7rem);
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      color: rgba(10, 122, 194, 0.18);
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 26px 0 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 30px;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .contact {
+      background: linear-gradient(120deg, var(--blue), #0a4f7d);
+      color: white;
+    }
+
+    .contact .section-head p,
+    .contact .section-head .eyebrow { color: white; }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .info-panel,
+    .contact-form {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 26px;
+    }
+
+    .info-panel h3,
+    .contact-form h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .contact-list div {
+      color: rgba(255,255,255,0.9);
+    }
+
+    .contact-form form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.06);
+      color: white;
+      padding: 12px 14px;
+      font: inherit;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: rgba(255,255,255,0.7);
+    }
+
+    footer {
+      background: #0b1117;
+      color: #dfe9f2;
+      padding: 28px 0;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    .floating-wa {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 12px 30px rgba(29,191,115,0.38);
+      z-index: 999;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .contact-box,
+      .service-grid,
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav {
+        padding: 16px 0;
+        align-items: flex-start;
+      }
+
+      .brand {
+        font-size: 0.92rem;
+      }
+
+      nav {
+        justify-content: flex-end;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .cta-row {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="OMK Contro System Malaysia home">
+        <span class="brand-mark">OMK</span>
+        <span>
+          OMK Contro System
+          <small>Malaysia · Electrical Services</small>
+        </span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="cta-row">
+        <a class="btn primary" href="#contact">Get a Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Electrical services · Peninsular Malaysia</div>
+          <h1>Reliable Electrical Solutions for Your Home &amp; Business</h1>
+          <p>
+            From wiring and troubleshooting to electrical maintenance, EV charger installation,
+            fibre optic cabling and CCTV solutions, OMK Contro System Malaysia helps homes,
+            businesses and commercial sites stay safe, efficient and connected.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="#contact">Get a Quote →</a>
+            <a class="btn secondary" href="https://wa.me/60108082628" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="OMK service summary">
+          <div class="stats">
+            <div class="stat">
+              <strong>Residential</strong>
+              Electrical works, lighting, troubleshooting and upgrades.
+            </div>
+            <div class="stat">
+              <strong>Commercial</strong>
+              Project support, cabling and electrical maintenance.
+            </div>
+            <div class="stat">
+              <strong>Smart systems</strong>
+              EV chargers, CCTV, fibre and structured cabling solutions.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-bar">
+      <div class="container trust-list">
+        <span>✓ Residential &amp; commercial enquiries</span>
+        <span>✓ Clear communication</span>
+        <span>✓ Prompt and reliable service</span>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">What we do</div>
+          <h2>Electrical Services</h2>
+          <p>Practical, professional solutions for homes, offices, commercial spaces and industrial premises.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="card">
+            <div class="card-visual">⚡</div>
+            <div class="card-body">
+              <h3>Electrical Wiring</h3>
+              <p>Safe and efficient wiring, rewiring and electrical installations for residential and commercial use.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-visual">🔧</div>
+            <div class="card-body">
+              <h3>Maintenance &amp; Repair</h3>
+              <p>Reliable troubleshooting, maintenance and fault detection for electrical systems and equipment.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-visual">📡</div>
+            <div class="card-body">
+              <h3>Structured Cabling</h3>
+              <p>UTP Cat-6 and network cabling solutions designed for reliable connectivity and performance.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-visual">🧵</div>
+            <div class="card-body">
+              <h3>Fibre Optic</h3>
+              <p>High-performance fibre optic cabling for fast, stable and scalable communication infrastructure.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-visual">📹</div>
+            <div class="card-body">
+              <h3>CCTV Systems</h3>
+              <p>Surveillance system supply, installation and support for improved site monitoring and security.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-visual">🔌</div>
+            <div class="card-body">
+              <h3>EV Charger Supply</h3>
+              <p>EV charging solutions for homes, commercial spaces and business premises with practical installation support.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div>
+          <div class="section-head" style="text-align:left; margin:0 0 20px; max-width:none;">
+            <div class="eyebrow">About us</div>
+            <h2>Professional, dependable and responsive</h2>
+          </div>
+          <p style="color:var(--muted); font-size:1.05rem; margin:0;">
+            OMK Contro System Malaysia is committed to delivering dependable electrical and low-voltage solutions with quality workmanship and transparent communication.
+          </p>
+          <ul class="check-list">
+            <li>Residential and commercial electrical services</li>
+            <li>Trusted project support and practical guidance</li>
+            <li>Reliable system installations for power, network and security</li>
+            <li>Service coverage across Peninsular Malaysia</li>
+          </ul>
+        </div>
+
+        <div class="about-visual" aria-label="OMK company overview"></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Contact</div>
+          <h2>Request a quote today</h2>
+          <p>Tell us about your electrical, cabling or security project and we will get back to you.</p>
+        </div>
+
+        <div class="contact-box">
+          <div class="info-panel">
+            <h3>OMK Contro System Malaysia</h3>
+            <div class="contact-list">
+              <div><strong>Phone:</strong> +60 10-8082628</div>
+              <div><strong>WhatsApp:</strong> <a href="https://wa.me/60108082628" target="_blank" rel="noopener">Chat with us</a></div>
+              <div><strong>Service area:</strong> Peninsular Malaysia</div>
+              <div><strong>Focus:</strong> Electrical services, EV chargers, UTP Cat-6, fibre optics and CCTV</div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3>Send an enquiry</h3>
+            <form action="https://formsubmit.co/your-email@example.com" method="POST">
+              <input type="text" name="name" placeholder="Your name" required />
+              <input type="email" name="email" placeholder="Your email" required />
+              <input type="text" name="phone" placeholder="Phone number" />
+              <textarea name="message" rows="5" placeholder="Tell us about your project" required></textarea>
+              <button class="btn primary" type="submit" style="border:none; cursor:pointer; width:auto;">Send Enquiry</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 OMK Contro System Malaysia. All rights reserved.
+  </footer>
+
+  <a class="floating-wa" href="https://wa.me/60108082628" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">✆</a>
+</body>
+</html>
